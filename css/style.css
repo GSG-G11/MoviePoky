@@ -139,7 +139,6 @@ form input {
 /* Movies */
 .movies-container {
 	display: flex;
-	align-items: center;
 	margin-inline: -15px;
 	flex-wrap: wrap;
 	margin-top: 50px;
