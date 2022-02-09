@@ -7,7 +7,8 @@
   let searchTerm = "superman";
   let apiURL = `https://api.nytimes.com/svc/movies/v2/reviews/search.json?query=${searchTerm}&api-key=${apiKey}`;
 
-  window.onload = () => fetch(apiURL, renderArticles, ".movies-container");
+  window.onload = () =>
+    fetch(apiURL, renderArticles, ".movies-container", searchTerm);
 
   form.onsubmit = (e) => {
     e.preventDefault();
@@ -15,7 +16,7 @@
 
     if (searchTerm.trim() !== "") {
       apiURL = `https://api.nytimes.com/svc/movies/v2/reviews/search.json?query=${searchTerm}&api-key=${apiKey}`;
-      fetch(apiURL, renderArticles, ".movies-container");
+      fetch(apiURL, renderArticles, ".movies-container", searchTerm);
     }
   };
 
@@ -25,7 +26,8 @@
     if (articles) {
       articles.forEach((article) => createArticle(article));
     } else {
-      noData(".movies-container");
+      searchTerm = $("form input").value;
+      noData(".movies-container", searchTerm);
     }
   }
 

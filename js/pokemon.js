@@ -51,7 +51,8 @@ const getPokemon = (e, defaultValue) => {
         );
         card.appendChild(type);
       },
-      ".card"
+      ".card",
+      input
     );
   }
   card.innerHTML = "";

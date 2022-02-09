@@ -1,6 +1,6 @@
-function fetch(url, callback, selector) {
+function fetch(url, callback, selector, input) {
   const xhr = new XMLHttpRequest();
-
+  console.log(input);
   xhr.onreadystatechange = () => {
     if (xhr.readyState === 4) {
       switch (xhr.status) {
@@ -9,9 +9,12 @@ function fetch(url, callback, selector) {
           callback(response);
           break;
         case 404:
-          noData(selector);
+          if (!url.includes("pokeapi.co/api/v2/pokemon/")) {
+            pageNotFound();
+          }
+          noData(selector, input);
           break;
-        case xhr.status.toString().startsWith("5"):
+        case 500:
           serverCrash();
           break;
       }
@@ -51,15 +54,23 @@ function createLink(href, className = "", txtContent = "") {
 }
 
 function pageNotFound() {
-  location.href = "/html/404.html";
+  location.href = "MoviePoky/html/404.html";
 }
 
 function serverCrash() {
-  location.href = "/html/500.html";
+  location.href = "MoviePoky/html/500.html";
 }
 
-function noData(selector) {
+function noData(selector, input) {
+  const noDataContent = createElement("div", "noDataContent", "");
   const card = $(selector);
-  const messeg = createImg("../assets/images/nodata.jpg", "No Data", "");
-  card.appendChild(messeg);
+  const img = createImg("../assets/images/nodata.jpg", "No Data", "noDataImg");
+  noDataContent.appendChild(img);
+  const messeg = createElement(
+    "p",
+    "textMesseg",
+    `Sorry, we don't have ${input}`
+  );
+  noDataContent.appendChild(messeg);
+  card.appendChild(noDataContent);
 }
