@@ -3,7 +3,7 @@
 	const moviesContainer = $(".movies-container");
 	const liLabels = ["Rating: ", "Director: ", "Release Date: ", "Article: "];
 	const wordsLength = 20;
-	const apiKey = "0M9CE9XnoWUchqmjIvBpKcU1Ga0foZ2d";
+	const apiKey = "beVf5aG00ErGZmhOp0Urm0GCywMCg0Ar";
 	let searchTerm = "superman";
 	let apiURL = `https://api.nytimes.com/svc/movies/v2/reviews/search.json?query=${searchTerm}&api-key=${apiKey}`;
 
