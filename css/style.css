@@ -254,3 +254,9 @@ form input {
   }
 }
 /*end pokemon page*/
+.noDataContent {
+  margin: auto;
+}
+.textMesseg {
+  color: white;
+}
