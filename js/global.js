@@ -3,9 +3,17 @@ function fetch(url, callback) {
 
 	xhr.onreadystatechange = () => {
 		if (xhr.readyState === 4) {
-			if (xhr.status === 200) {
-				const response = JSON.parse(xhr.responseText);
-				callback(response);
+			switch (xhr.status) {
+				case 200:
+					const response = JSON.parse(xhr.responseText);
+					callback(response);
+					break;
+				case xhr.status.toString().startsWith("4"):
+					pageNotFound();
+					break;
+				case xhr.status.toString().startsWith("5"):
+					serverCrash();
+					break;
 			}
 		}
 	};
@@ -40,4 +48,12 @@ function createLink(href, className = "", txtContent = "") {
 	link.textContent = txtContent;
 	link.target = "_blank";
 	return link;
+}
+
+function pageNotFound() {
+	location.href = "MoviePoky/html/404.html";
+}
+
+function serverCrash() {
+	location.href = "MoviePoky/html/500.html";
 }
