@@ -56,7 +56,6 @@ const getPokemon = (e, defaultValue) => {
   }
   card.innerHTML = "";
   getPokemonDetails();
-  // noData(".card");
 };
 
 form.addEventListener("submit", getPokemon);
