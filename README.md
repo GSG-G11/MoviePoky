@@ -6,22 +6,17 @@ MoviePoky is a website where you can search for different movies reviews with ar
 
 ## Table of Contents
 
-- [MoviePoky](#moviepoky)
-  - [Live demo _here_](#live-demo-here)
-  - [Table of Contents](#table-of-contents)
-  - [Purpose <span id="purpose"></span>](#purpose-)
-  - [Features <span id="features"></span>](#features-)
-  - [User Stories <span id="user-stories"></span>](#user-stories-)
-    - [As a user:](#as-a-user)
-  - [User Journey <span id="user-journey"></span>](#user-journey-)
-  - [Screenshots <span id="screenshots"></span>](#screenshots-)
-  - [Technologies Used <span id="technologies-used"></span>](#technologies-used-)
-  - [MoviePoky uses <span id="apis"></span>](#moviepoky-uses-)
-  - [Usage <span id="usage"></span>](#usage-)
-  - [Project Status <span id="project-status"></span>](#project-status-)
-  - [Acknowledgements <span id="acknowledgements"></span>](#acknowledgements-)
-  - [Contact <span id="contact"></span>](#contact-)
-
+* [Purpose](#purpose)
+* [Features](#features)
+* [User Stories](#user-stories)
+* [User Journey](#user-journey)
+* [Screenshots](#screenshots)
+* [Technologies Used](#technologies-used)
+* [APIs](#apis)
+* [Usage](#usage)
+* [Project Status](#project-status)
+* [Acknowledgements](#acknowledgements)
+* [Contact](#contact)
 ## Purpose <span id="purpose"></span>
 
 - The purpose of building `MoviePoky` is to practice fetching data from APIs using `XMLHttpRequest`, use generic functions when development and practice callbacks.
